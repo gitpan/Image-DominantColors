@@ -9,7 +9,7 @@ use Imager;
 use Imager::Fill;
 use List::Util qw(sum);
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 sub new {
 	my $class = shift;
@@ -70,7 +70,7 @@ __END__
 
 =head1 NAME
 
-Image::DominantColors - Internal Class to represent centroids.
+Image::ColorCollection - Internal Class to represent centroids.
 
 =head1 VERSION
 

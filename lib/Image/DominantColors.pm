@@ -9,7 +9,7 @@ use Imager::Fill;
 use Image::ColorCollection;
 use POSIX;
  
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 
 sub new {
@@ -57,7 +57,7 @@ sub getDominantColors {
 	
 	my $shft = 100;
 	my $it = 0;#track iterations
-	print "TotalCentroid : ".scalar(@centroids);
+#	print "TotalCentroid : ".scalar(@centroids);
 	while($shft != 0)
 	{
 		foreach my $col (@colors) {
@@ -98,7 +98,7 @@ __END__
 
 =head1 NAME
 
-Image::DominantColors - Find dominant colors in an image.
+Image::DominantColors - Find dominant colors in an image with k-means clustering.
 
 =head1 VERSION
 
@@ -114,6 +114,8 @@ Version 0.01
 This module does just one simple thing. It scans an image and clusters colors with the L<k-means clustering|http://en.wikipedia.org/wiki/K-means_clustering> 
 algorithm to give you the most dominant colors in that image.
 
+Here is a live demo : L<http://www.tryperl.com/dominantcolors/>
+
 This is how it works, I would advise leaving the clusters to a default 3 which works best with images.:
 
     use Image::DominantColors;
@@ -125,8 +127,8 @@ This is how it works, I would advise leaving the clusters to a default 3 which w
     my $dmt = Image::DominantColors->new({file => 'some_path/img.jpg'});
     my $r = $dmt->getDominantColors();
     
-    print "Returned:";
     print Dumper($r);
+	#This outputs the following:
     # [
     #           {
     #             'r' => 31,

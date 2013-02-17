@@ -1,5 +1,5 @@
 {
-   "abstract" : "Find dominant colors in an image.",
+   "abstract" : "Find dominant colors in an image with k-means clustering.",
    "author" : [
       "Gideon Israel Dsouza <gideon@cpan.org>"
    ],
@@ -43,5 +43,5 @@
          "url" : "https://github.com/gideondsouza/image-dominant-colors"
       }
    },
-   "version" : "0.01"
+   "version" : "0.02"
 }
